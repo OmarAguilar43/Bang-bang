@@ -4,7 +4,7 @@ function jugar() {
 		function () {
 			window.location.assign('personaje.html');
 		}, 1200)
-	var sfxStart = new Audio('sfx/start.m4a');
+	var sfxStart = new Audio('sfx/start.mp3');
 	sfxStart.play();
 }
 
@@ -55,7 +55,7 @@ function personaje2() {
 		function () {
 			window.location.assign('personaje2.html');
 		}, 1200)
-	var sfxStart = new Audio('sfx/start.m4a');
+	var sfxStart = new Audio('sfx/start.mp3');
 	sfxStart.play();
 }
 
@@ -70,7 +70,7 @@ function comenzarJuego() {
 		function () {
 			window.location.assign('juego.html');
 		}, 1200)
-	var sfxStart = new Audio('sfx/start.m4a');
+	var sfxStart = new Audio('sfx/start.mp3');
 	sfxStart.play();
 }
 
@@ -158,6 +158,8 @@ function conteo() {
 function disparo1() {
 	if (!puedeDisparar) return;
 	if (primerDisparo === 1) return;
+	var sfxStart = new Audio('sfx/start.mp3');
+	sfxStart.play();
 	if (primerDisparo === 2) {
 		declararEmpate();
 		return;
@@ -169,6 +171,8 @@ function disparo1() {
 function disparo2() {
 	if (!puedeDisparar) return;
 	if (primerDisparo === 2) return;
+	var sfxStart = new Audio('sfx/start.mp3');
+	sfxStart.play();
 	if (primerDisparo === 1) {
 		declararEmpate();
 		return;
@@ -181,7 +185,7 @@ function declararEmpate() {
 	clearTimeout(timeoutEmpate);
 	puedeDisparar = false;
 	primerDisparo = 0;
-	
+
 	document.querySelector('.right').removeAttribute('onclick');
 	document.querySelector('.left').removeAttribute('onclick');
 
@@ -199,8 +203,6 @@ function declararEmpate() {
 	setTimeout(function () {
 		window.location.assign('juego.html');
 	}, 1500);
-	var sfxStart = new Audio('sfx/start.m4a');
-	sfxStart.play();
 }
 
 function ejecutarDisparo1() {
@@ -222,7 +224,7 @@ function ejecutarDisparo1() {
 	document.querySelector('.no1').style.display = "none";
 	document.querySelector('.no2').style.display = "none";
 	document.querySelector('.no3').style.display = "none";
-	
+
 	let j1 = localStorage.getItem('jugador1') || 'Jugador 1';
 	document.querySelector('.msj').innerHTML = "¡" + j1.toUpperCase() + " GANA!";
 	document.querySelector('.msj').style.opacity = "1";
@@ -230,8 +232,6 @@ function ejecutarDisparo1() {
 	setTimeout(function () {
 		window.location.assign('juego.html');
 	}, 1500);
-	var sfxStart = new Audio('sfx/start.m4a');
-	sfxStart.play();
 }
 
 function ejecutarDisparo2() {
@@ -253,7 +253,7 @@ function ejecutarDisparo2() {
 	document.querySelector('.no1').style.display = "none";
 	document.querySelector('.no2').style.display = "none";
 	document.querySelector('.no3').style.display = "none";
-	
+
 	let j2 = localStorage.getItem('jugador2') || 'Jugador 2';
 	document.querySelector('.msj').innerHTML = "¡" + j2.toUpperCase() + " GANA!";
 	document.querySelector('.msj').style.opacity = "1";
@@ -261,8 +261,6 @@ function ejecutarDisparo2() {
 	setTimeout(function () {
 		window.location.assign('juego.html');
 	}, 1500);
-	var sfxStart = new Audio('sfx/start.m4a');
-	sfxStart.play();
 }
 
 function restart() {
